@@ -1,7 +1,8 @@
 #!/bin/bash/ -x
 
 WAGE_PER_HOUR=20
-WORKING_HOUR=8
+FULLDAY_WORKING_HOUR=8
+HALFDAY_WORKING_HOUR=4
 echo "Welcome to Employee Wage Computation"
 
 presenty=$((RANDOM%2))
