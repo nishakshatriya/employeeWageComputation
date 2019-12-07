@@ -11,6 +11,16 @@ totalDays=0
 WAGE_PER_HOUR=25
 echo "Welcome to Employee Wage Computation"
 
+function getWorkingHours(){
+	workingHoursOption=$((RANDOM%2))
+	if [ $workingHoursOption -eq 1 ]
+	then
+		echo $FULLDAY_WORKING_HOUR
+	else
+		echo $HALFDAY_WORKING_HOUR
+	fi
+}
+
 while [[ $totalHour -le 100 && $totalDays -le 20 ]]
 do
 
@@ -18,16 +28,14 @@ do
 	if [ $presenty -eq 1 ]
 	then
 		echo "Employee Present"
-		workingHours=$((RANDOM%2))
+		workingHours=$( getWorkingHours )
 		case $workingHours in
-			$isFullDay)
-				totalHour=$(($totalHour+$FULLDAY_WORKING_HOUR))
+			$FULLDAY_WORKING_HOUR)
 				fullDayWage=$(($WAGE_PER_HOUR*$FULLDAY_WORKING_HOUR))
 				echo "Wage per day is:" $fullDayWage
 				totalDays=$(($totalDays+1))
 				;;
-			$isHalfDay)
-				totalHour=$(($totalHour+$HALFDAY_WORKING_HOUR))
+			$HALFDAY_WORKING_HOUR )
 				halfDayWage=$(($WAGE_PER_HOUR*$HALFDAY_WORKING_HOUR))
 				echo "Wage per day is:" $halfDayWage
 				totalDays=$(($totalDays+1)) 
