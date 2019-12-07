@@ -15,11 +15,11 @@ then
 	case $workingHours in
 		$isFullDay)
 			fullDayWage=$(( $WAGE_PER_HOUR * $FULLDAY_WORKING_HOUR )) 
-			echo $fullDayWage
+			echo "The fullTime wage is:" $fullDayWage
 			;;
 		$isHalfDay)
 			halfDayWage=$(( $WAGE_PER_HOUR * $HALFDAY_WORKING_HOUR ))
-			echo $halfDayWage 
+			echo "The partTime wage is:" $halfDayWage 
 			;;
 	esac
 else
