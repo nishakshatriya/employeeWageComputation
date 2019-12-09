@@ -41,21 +41,17 @@ do
 				fullDayWage=$(($WAGE_PER_HOUR*$FULLDAY_WORKING_HOUR))
 				dailyArr["Day$counter"]=$fullDayWage
 				totalWage=$(($totalWage+$fullDayWage))
-				totalArr["Day$counter"]=$totalWage
-
 				echo "Wage per day is:" $fullDayWage
-				totalDays=$(($totalDays+1))
 				;;
 			$HALFDAY_WORKING_HOUR )
 				halfDayWage=$(($WAGE_PER_HOUR*$HALFDAY_WORKING_HOUR))
 				dailyArr["Day$counter"]=$halfDayWage
 				totalWage=$(($totalWage+$halfDayWage))
-				totalArr["Day$counter"]=$totalWage
-
 				echo "Wage per day is:" $halfDayWage
-				totalDays=$(($totalDays+1)) 
 				;;
 		esac
+		totalArr["Day$counter"]=$totalWage
+		totalDays=$(($totalDays+1))
 		counter=$(( $counter+1 ))
 
 
